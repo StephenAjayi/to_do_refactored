@@ -1,0 +1,16 @@
+<ul>
+<% if @tasks.any?() %>
+  <% @tasks.each() do |task| %>
+    <li><%= task.description() %></li>
+  <% end %>
+</ul>
+<% else %>
+<h1>There are no tasks, add one below!</h1>
+<% end %>
+
+
+
+<form class="form-group" action="/tasks" method="post">
+  <input type="text" name="new_description" placeholder="Enter a new task">
+  <button type="submit" class="btn btn-submit">Add Task!</button>
+</form>
