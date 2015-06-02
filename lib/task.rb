@@ -1,9 +1,8 @@
 class Task
-
-  @@all_tasks = []
-
+ @@all_tasks = []
  define_method(:initialize) do |description|
    @description = description
+
   end
 
   define_method(:description) do
@@ -16,5 +15,8 @@ class Task
 
   define_method(:save) do
     @@all_tasks.push(self)
+  end
+  define_singleton_method(:clear) do
+    @@all_tasks = []
   end
 end
